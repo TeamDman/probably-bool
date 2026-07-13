@@ -34,6 +34,19 @@ deterministic correction: use `bits_for_guaranteed_correction(3)`. For a
 probabilistic sizing target, use `bits_for_confidence`, which combines an
 independent bit-flip rate with a requested posterior confidence.
 
+## Examples
+
+Each example answers one question and can be run with `cargo run --example <name>`:
+
+* [`basic_decode`](examples/basic_decode.rs) — encode a boolean, inject faults,
+  and decode it with a posterior confidence.
+* [`sizing`](examples/sizing.rs) — choose a width for a deterministic or
+  probability-model-based requirement.
+* [`flip_distribution`](examples/flip_distribution.rs) — inspect the binomial
+  distribution of independent bit-flip counts.
+* [`custom_storage`](examples/custom_storage.rs) — implement `BitStorage` for
+  exactly seven usable bits.
+
 ## Guarantees and assumptions
 
 * A width of `2 * flips + 1` corrects any pattern of at most `flips` errors.
