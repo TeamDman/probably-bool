@@ -18,17 +18,19 @@ the strongest first codec for one boolean.
 ```rust
 use probably_bool::{BitFlipModel, Boolean, EncodedBoolean};
 
-let original = Boolean::True;
-let encoded: EncodedBoolean<u64> = original.encode();
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let original = Boolean::True;
+    let encoded: EncodedBoolean<u64> = original.encode();
 
-// In a real program this is the word read back from fallible storage.
-let received = EncodedBoolean::from_storage(u64::MAX ^ 0b101);
-let model = BitFlipModel::new(0.01)?;
-let decoded = received.decode(&model)?;
+    // In a real program this is the word read back from fallible storage.
+    let received = EncodedBoolean::from_storage(u64::MAX ^ 0b101);
+    let model = BitFlipModel::new(0.01)?;
+    let decoded = received.decode(&model)?;
 
-assert_eq!(decoded.value(), Some(Boolean::True));
-assert!(decoded.confidence().as_f64() > 0.999);
-# Ok::<(), Box<dyn std::error::Error>>(())
+    assert_eq!(decoded.value(), Some(Boolean::True));
+    assert!(decoded.confidence().as_f64() > 0.999);
+    Ok(())
+}
 ```
 
 For a hard limit of three flipped bits, seven bits are sufficient for
