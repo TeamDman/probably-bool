@@ -1,5 +1,7 @@
 # probably-bool
 
+[![Crates.io](https://img.shields.io/crates/v/probably-bool.svg)](https://crates.io/crates/probably-bool)
+
 `probably-bool` stores one logical boolean as a repetition code: every usable
 bit in the chosen storage contains the same value. A received word is decoded
 by majority vote and can be given an exact Bayesian confidence under an
