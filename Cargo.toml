@@ -1,0 +1,15 @@
+[package]
+name = "probably-bool"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "A bit-flip-resilient boolean with Bayesian confidence estimates."
+authors = ["TeamDman <TeamDman9201@gmail.com>"]
+license = "MPL-2.0"
+repository = "https://github.com/TeamDman/probably-bool"
+keywords = ["boolean", "ecc", "error-correction", "repetition-code", "reliability"]
+categories = ["algorithms", "data-structures"]
+readme = "README.md"
+
+[lib]
+name = "probably_bool"

@@ -1,0 +1,18 @@
+# Rust build artifacts
+/target/
+
+# Cargo-created local package archives
+/*.crate
+
+# Local environment and editor configuration
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# PowerShell user settings and transcripts
+*.ps1.user
+*.ps1history
